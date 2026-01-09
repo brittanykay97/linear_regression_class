@@ -1,0 +1,235 @@
+---
+title: "Introduction to Linear Regression"
+subtitle: "POL 682: Linear Regression Analysis"
+author: 
+  - name: "Chris Weber"
+    affiliation: "University of Arizona"
+    email: "chrisweber@arizona.edu"
+institute: "School of Government and Public Policy"
+date: today
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    background-transition: fade
+    height: 1080
+    width: 1920
+    margin: 0.1
+    footer: "POL 682 | Introduction to Linear Regression"
+    slide-number: true
+    logo: "ua-logo.png"
+    code-fold: true
+editor: visual
+knitr:
+  opts_chunk:
+    echo: true
+    warning: false
+    message: false
+
+note: |
+  Instructor slides to accompany:
+  Gujarati and Porter. 2009. Basic Econometrics.
+  
+  Not to be distributed, shared, or cited without permission.
+---
+
+# Introduction to Linear Regression
+
+## A Linear Model
+
+-   Linear regression is a common technique in the social sciences.
+-   Distills complex relationships to a simple linear relationship.
+
+$$y_i = \alpha + \beta x_i$$
+
+-   **Intercept** ($\alpha$): The point at which the regression line crosses the $y$-axis, or the value of $y$ when $x=0$.
+
+-   **Slope** ($\beta$): The change in $y$ for every unit change in $x$. Formally: $\frac{\partial y}{\partial x} = \beta$
+
+### Example
+
+$$y_{\text{RepublicanCandidate}} = \alpha + \beta_1 x_{\text{PID}}$$
+
+------------------------------------------------------------------------
+
+## Some Common Misconceptions
+
+### Reverse Causality
+
+$x$ may be caused by $y$ rather than the reverse.
+
+### Confounding
+
+$x$ may be related to $y$, but there is a common variable affecting both.
+
+### Mediation
+
+A relationship may be indirect through another variable.
+
+### The Challenge
+
+It is difficult to sort these out using a regression model with **observed cross-sectional data**.
+
+In most applications, we observe the outcome of a process. It is often difficult to make claims about the process itself.
+
+------------------------------------------------------------------------
+
+## Observation versus Manipulation
+
+### Experimental versus Observational
+
+Is $x$ observed or under the control of the researcher?
+
+-   If **observational**: We can examine whether a relationship exists, but that relationship does not imply causation.
+
+### Correlation versus Regression
+
+The two are intimately related, but we make several key assumptions in the regression equation.
+
+-   **Dependent variable** (regressand): The outcome
+-   **Explanatory variable** (regressor): The predictor
+-   The explanatory variable is **fixed and exogenous**; the dependent variable is **random and endogenous** *(Gujarati and Porter, p. 21)*
+
+------------------------------------------------------------------------
+
+## Randomization and Control
+
+-   In some cases, $x$ can be manipulated through random assignment.
+-   Assign units to a treatment or control condition.
+-   **Gold standard**: Random assignment to treatment conditions.
+
+### Theoretical Advantage
+
+When units are randomly assigned to treatment: $$\text{cor}(x, \epsilon) = 0$$
+
+This is because confounding variables are theoretically unrelated to treatment assignment.
+
+This is a key assumption of the regression model that experiments naturally satisfy.
+
+------------------------------------------------------------------------
+
+## Treatment Effects
+
+Let $T_i$ represent assignment to a treatment condition:
+
+$$y_i = \alpha + \beta T_i + \epsilon_i$$
+
+Here, $\beta$ is the **treatment effect**, the **Average Treatment Effect (ATE)**:
+
+$$E(\beta) = E(\delta_i) = E(Y_{i,1} - Y_{i,0}) = E(Y_{i,1}) - E(Y_{i,0})$$
+
+### Important Note
+
+If the true model is $y_i = \alpha + \beta T_i + \omega x_i + \epsilon_i$ and $X$ and $T$ are correlated, then: $$\text{cor}(x, \epsilon) \neq 0$$
+
+Random assignment to $T$ theoretically ensures $\text{cor}(x, \epsilon) = 0$ because confounders are equally distributed across treatment groups.
+
+------------------------------------------------------------------------
+
+# Key Terms and Definitions
+
+## Data Types
+
+**Random/Stochastic Variables**
+
+:   Variables that take on a set of values drawn from a probability distribution.
+
+**Cross-Sectional Data**
+
+:   Units observed once. Indexed with $i$: $x_i$
+
+**Time Series Data**
+
+:   A single unit observed multiple times. Indexed with $t$: $x_t$ - May *trend* (systematic change) or be *stationary* (randomly varying around a mean)
+
+**Panel Data**
+
+:   Multiple units observed over multiple time periods. Indexed with $i$ and $t$: $x_{it}$
+
+------------------------------------------------------------------------
+
+## Variable Types
+
+*(Gujarati and Porter, p. 28)*
+
+| Type         | Zero Point | Distances   | Ordering | Examples                      |
+|---------------|---------------|---------------|---------------|---------------|
+| **Ratio**    | Natural    | Meaningful  | Natural  | Income, height, age           |
+| **Interval** | None       | Meaningful  | Natural  | Temperature (°C), IQ          |
+| **Ordinal**  | None       | Meaningless | Natural  | Education level, satisfaction |
+| **Nominal**  | None       | Meaningless | None     | Religion, ethnicity, region   |
+
+**Quantitative variables**: Ratio and Interval\
+**Qualitative variables**: Ordinal and Nominal
+
+
+# What is GitHub?
+
+## GitHub Basics
+
+**GitHub** is a web-based platform for:
+
+- **Version Control**: Track changes to your code and documents
+- **Collaboration**: Work with others on the same project
+- **Project Management**: Organize tasks and track progress
+- **Backup**: Store your work in the cloud
+- **Portfolio**: Showcase your work to employers and collaborators
+
+### Key Insight
+GitHub makes your code **transparent**, **reproducible**, and **collaborative**.
+
+---
+
+## Why Use GitHub?
+
+### For Your Research
+- Version Control. It allows you to track every change you make. 
+- Collaboration. It allows you to easily share code and collaborate on projects.
+- Reproducibility. It helps ensure that your analyses can be reproduced by others.
+- Reversion. It allows you to revert to previous versions of your code.
+
+
+---
+
+# Key Concepts
+
+## Repository (Repo)
+
+A **repository** is a folder that contains:
+- Your code files
+- Data files
+- Documentation (README.md)
+- Configuration files
+- Complete history of changes
+- Let's have a look at the structure of a repo
+
+### Example Structure
+```
+my_analysis/
+├── README.md
+├── data/
+│   ├── raw_data.csv
+│   └── processed_data.csv
+├── code/
+│   ├── 01_load_data.R
+│   ├── 02_analysis.R
+│   └── 03_visualize.R
+└── output/
+    ├── figures/
+    └── tables/
+```
+
+---
+
+## Setup
+
+- Create an account at [github.com](https://github.com)
+- Log into your account
+- Search for this repository, fork it to your account, and clone it to your computer
+- And, create a sample repository to practice with.
+
+## `RStudio`
+
+- Generally you should work from the terminal to use Git commands.
+- You can access the terminal from within RStudio: **Tools** → **Terminal** → **New Terminal**
+- Alternatively, when using RStudio, you can use the **Git** tab to perform Git operations via a graphical interface, the `Git` tab.
