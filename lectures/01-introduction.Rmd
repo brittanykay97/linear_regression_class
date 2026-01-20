@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Linear Regression and Reproducibility"
+title: "Introduction to Linear Regression"
 author: "Linear Regression Course"
 date: "`r Sys.Date()`"
 output:

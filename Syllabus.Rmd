@@ -60,7 +60,8 @@ Fox, John. 2008. *Applied Regression Analysis and Generalized Linear Models.* Th
 
 **Course Notes:**
 
-Please access the course notes here https://linereg.netlify.app/
+[Course Notes](https://linereg.netlify.app/)
+
 
 **Additional Readings:**
 
@@ -128,7 +129,7 @@ In this class you will be asked to complete assigned DataCamp modules to supplem
 - Faculty own intellectual property for course materials; student notes are for personal use only
 - FERPA privacy information: https://registrar.arizona.edu/ferpa
 - Incomplete and withdrawal policies: https://catalog.arizona.edu/policies/grade
-1
+
 
 ## Grading Policy
 

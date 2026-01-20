@@ -1,0 +1,8 @@
+---
+title: "Lecture Slides"
+format: html
+---
+
+# Week 1: Course Introduction and Overview of Linear Regression
+
+[RPubs: Linear Regression, Lecture 1](https://rpubs.com/crweber9874/linereg1)

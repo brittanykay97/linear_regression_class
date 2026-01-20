@@ -31,7 +31,7 @@ knitr:
 
 note: |
   Instructor slides to accompany:
-  Gujarati and Porter. 2009. Basic Econometrics.
+  Fox. 2009. Applied Regression Analysis
 
   Not to be distributed, shared, or cited without permission.
 ---
@@ -44,7 +44,6 @@ note: |
 -   Syllabus review, expectations and questions
 -   Getting started with `R` and `Github`
 -   Overview of the linear model
-
 
 # What is GitHub?
 
