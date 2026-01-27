@@ -194,6 +194,7 @@ git push origin main
 | **Push** | Sending local changes to remote | `git push origin main` |
 
 ------------------------------------------------------------------------
+
 ## Class Activity
 
 **Fork the Class Repository**
